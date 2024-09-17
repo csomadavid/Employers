@@ -14,10 +14,10 @@ class Program
 
         public Alkalmazott(int azonosito, string nev, int kor, decimal kereset)
         {
-            Azonosito = azonosito;
-            Nev = nev;
-            Kor = kor;
-            Kereset = kereset;
+            Azonosito = Azonosito;
+            Nev = Nev;
+            Kor = Kor;
+            Kereset = Kereset;
         }
     }
 
@@ -40,12 +40,12 @@ class Program
 
                 try
                 {
-                    var azonosito = int.Parse(reszek[0]);
-                    var nev = reszek[1].Trim();
-                    var kor = int.Parse(reszek[2]);
-                    var kereset = decimal.Parse(reszek[3]);
+                    var Azonosito = int.Parse(reszek[0]);
+                    var Nev = reszek[1].Trim();
+                    var Kor = int.Parse(reszek[2]);
+                    var Kereset = decimal.Parse(reszek[3]);
 
-                    alkalmazottak.Add(new Alkalmazott(azonosito, nev, kor, kereset));
+                    alkalmazottak.Add(new Alkalmazott(Azonosito, Nev, Kor, Kereset));
                 }
                 catch (FormatException e)
                 {
@@ -59,7 +59,7 @@ class Program
         }
         catch (IOException e)
         {
-            Console.WriteLine($"Hiba a fájl beolvasása közben: {e.Message}");
+            Console.WriteLine($"Hiba a fájl beolvasásakor: {e.Message}");
             return;
         }
 
@@ -69,14 +69,14 @@ class Program
             return;
         }
 
-        // 3. Jelenítse meg az összes dolgozó nevét
+        // 3. Jelenítse meg az összes dolgozók neveit
         Console.WriteLine("Alkalmazottak nevei:");
         foreach (var alkalmazott in alkalmazottak)
         {
             Console.WriteLine(alkalmazott.Nev);
         }
 
-        // 4. Írja ki azoknak az azonosítóját és nevét, akik a legjobban keresnek
+        // 4. Írja ki azoknak az azonosítóját és nevét, akik a legjotobb penzt keresik
         try
         {
             var maxKereset = alkalmazottak.Max(a => a.Kereset);
@@ -107,6 +107,6 @@ class Program
         decimal keresetKuszob = 50000;
         var magasKeresetuAlkalmazottak = alkalmazottak.Count(a => a.Kereset > keresetKuszob);
 
-        Console.WriteLine($"\n50000 forint felett kereső alkalmazottak száma: {magasKeresetuAlkalmazottak}");
+        Console.WriteLine($"\n50000 ft felett kereső alkalmazottak száma: {magasKeresetuAlkalmazottak}");
     }
 }
