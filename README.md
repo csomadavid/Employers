@@ -1,2 +1,2 @@
 # Employers
-Dolgozo adatai
+Dolgozok adatai
